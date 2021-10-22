@@ -17,9 +17,6 @@ import javafx.stage.Stage;
 import javafx.fxml.FXML;
 
 public class Login {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
     @FXML
     private TextField username;
     @FXML
@@ -29,32 +26,20 @@ public class Login {
     Alert a = new Alert(Alert.AlertType.NONE);
 
     public void Donthaveaccount(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("register.fxml")));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+     Main.Pageredirect(event,"register.fxml");
     }
     public void Checklogin(ActionEvent event) throws Exception{
-        if(Objects.equals(username.getText(), "mathan_14") && Objects.equals(password.getText(),"Mathankumar@14")){
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("admin.fxml")));
-            stage = (Stage)((Node)login_button).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+        if(Objects.equals(username.getText(), "admin") && Objects.equals(password.getText(),"admin")){
+            Main.Pageredirect(event,"admin.fxml");
         }else {
         final String query = String.format("SELECT * FROM userdata WHERE username = '%s' and password = '%s'",username.getText(),password.getText());
         Class.forName("org.postgresql.Driver");
-        final Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/BookMyBus", "postgres", "Mathankumar@14");
+        final Connection con = DriverManager.getConnection("jdbc:postgresql://ec2-176-34-105-15.eu-west-1.compute.amazonaws.com:5432/da8av01tsn5jju", "nkcemdwupnzcnn", "603d733873a5d2edecec0db613c3fc22f95efd1b83bd7c98f3ff62a8e83fe19b");
         final Statement st = con.createStatement();
         final ResultSet rs = st.executeQuery(query);
 
         if(rs.next()) {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
-            stage = (Stage)((Node)login_button).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+            Main.Pageredirect(event,"home.fxml");
         }else {
             a.setAlertType(Alert.AlertType.ERROR);
             a.setContentText("Incorrect credentials");

@@ -47,7 +47,7 @@ public class Register {
         String query = String.format("INSERT INTO userdata(firstname,lastname,emailid,username,password) VALUES('%s','%s','%s','%s','%s')", firstname,lastname,email,username,password);
 
         Class.forName("org.postgresql.Driver");
-        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/BookMyBus", "postgres", "Mathankumar@14");
+        Connection con = DriverManager.getConnection("jdbc:postgresql://ec2-176-34-105-15.eu-west-1.compute.amazonaws.com:5432/da8av01tsn5jju", "nkcemdwupnzcnn", "603d733873a5d2edecec0db613c3fc22f95efd1b83bd7c98f3ff62a8e83fe19b");
         Statement st = con.createStatement();
         st.executeUpdate(query);
     }

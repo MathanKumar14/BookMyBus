@@ -14,16 +14,9 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class Admin {
-    ObservableList list = FXCollections.observableArrayList();
-    public static String[] a = {"Mathan","Sathish","Ahmad"};
-    public void Adminlogout(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-    public void list(){
 
+    public void Adminlogout(ActionEvent event) throws IOException {
+        Main.Pageredirect(event,"login.fxml");
     }
+
 }

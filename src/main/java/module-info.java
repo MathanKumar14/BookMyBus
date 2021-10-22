@@ -4,6 +4,7 @@ module myapp.bookmybus {
     requires javafx.graphics;
     requires java.sql;
     requires org.postgresql.jdbc;
+    requires org.jetbrains.annotations;
 
 
     opens myapp.bookmybus to javafx.fxml;

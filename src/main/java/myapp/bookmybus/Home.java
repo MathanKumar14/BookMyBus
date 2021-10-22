@@ -1,23 +1,41 @@
 package myapp.bookmybus;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
 
 import java.io.IOException;
-import java.util.Objects;
+import java.sql.SQLException;
 
 public class Home {
 
+    ObservableList<String> city = FXCollections.observableArrayList("Chennai","Coimbatore","Erode","Kanyakumari","Madurai","Tirunelveli");
+
+
+    @FXML
+    private ChoiceBox<String> origin;
+    @FXML
+    private ChoiceBox<String> destination;
+    @FXML
+    private DatePicker date;
+
+    @FXML
+    private void initialize(){
+        origin.setValue("Origin");
+        destination.setValue("Destination");
+        origin.setItems(city);
+        destination.setItems(city);
+    }
+    public void Searchbus(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
+        Main.Pageredirect(event,"buses.fxml");
+    }
     public void Logout(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        Main.Pageredirect(event,"login.fxml");
     }
 
+
 }
+
+
