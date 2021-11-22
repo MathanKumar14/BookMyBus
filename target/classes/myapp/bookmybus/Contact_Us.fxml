@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myapp.bookmybus.Buses">
+   <children>
+      <AnchorPane prefHeight="78.0" prefWidth="700.0" style="-fx-background-color: BLACK;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Hyperlink layoutX="290.0" layoutY="22.0" onAction="#Home" text="HOME" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink layoutX="344.0" layoutY="22.0" text="MANAGE BOOKING" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink layoutX="471.0" layoutY="22.0" text="CONTACT" textFill="#00a1ff">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink layoutX="542.0" layoutY="22.0" onAction="#About_us" text="ABOUT US" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Hyperlink>
+            <ImageView fitHeight="66.0" fitWidth="81.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="6.0">
+               <image>
+                  <Image url="@images/BookMyBus.jpg" />
+               </image>
+            </ImageView>
+            <Hyperlink layoutX="617.0" layoutY="22.0" onAction="#Logout" text="LOG OUT" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </AnchorPane>
+      <ScrollPane layoutX="-1.0" layoutY="78.0" prefHeight="393.0" prefWidth="700.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="392.0" prefWidth="698.0">
+               <children>
+                  <ImageView fitHeight="494.0" fitWidth="1029.0" opacity="0.39" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Autobuses_eléctricos_BYD_en_Bogotá.jpg" />
+                     </image>
+                  </ImageView>
+                  <TextField layoutX="21.0" layoutY="14.0" prefHeight="40.0" prefWidth="198.0" style="-fx-background-color: LIGHT GREY;" text="Contact Us ">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </TextField>
+                  <TextArea layoutX="20.0" layoutY="67.0" opacity="0.7" prefHeight="308.0" prefWidth="407.0" style="-fx-background-color: light grey; -fx-font: red;" text="For business queries and other details please &#10;log on to www.bookmybus.org&#10;For reviews and suggestions, please write to us at&#10; 9920004716@klu.ac.in&#10;Ahmad Mohiuddin ( Front End Dev ) &#10;&#10;9920004677@klu.ac.in&#10;S.Sathish ( Back End Dev )&#10;&#10;9920004608@klu.ac.in &#10;Mathan Kumar M  ( Database Admin )&#10;">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></TextArea>
+                  <ImageView fitHeight="49.0" fitWidth="235.0" layoutX="475.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Contact.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="133.0" fitWidth="255.0" layoutX="470.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Contactus-01.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
