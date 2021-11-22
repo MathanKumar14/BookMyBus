@@ -34,7 +34,7 @@ public class Login {
         }else {
         final String query = String.format("SELECT * FROM userdata WHERE username = '%s' and password = '%s'",username.getText(),password.getText());
         Class.forName("org.postgresql.Driver");
-        final Connection con = DriverManager.getConnection("jdbc:postgresql://ec2-176-34-105-15.eu-west-1.compute.amazonaws.com:5432/da8av01tsn5jju", "nkcemdwupnzcnn", "603d733873a5d2edecec0db613c3fc22f95efd1b83bd7c98f3ff62a8e83fe19b");
+        final Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/BookMyBus", "postgres", "Mathankumar@14");
         final Statement st = con.createStatement();
         final ResultSet rs = st.executeQuery(query);
 
